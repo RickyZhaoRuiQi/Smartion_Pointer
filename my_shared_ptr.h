@@ -35,8 +35,9 @@ class my_shared_ptr
 				}
 			}
 			ptr = sp.ptr;
-			if(sp.count)
-				count = &(++*sp.count);
+			count = sp.count;
+			if(count)
+				++*sp.count;
 			return *this;
 		}
 
